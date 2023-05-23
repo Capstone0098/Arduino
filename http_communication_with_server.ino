@@ -19,7 +19,7 @@ char ssid[] = "LABLAB1";            // your network SSID (name)
 char pass[] = "qazwsxedc123";        // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
-char server[] = "192.168.0.39";
+char server[] = "3.25.179.109";
 int port = 5000;
 
 // Initialize the Ethernet client object
@@ -64,7 +64,7 @@ void setup()
     Serial.println("Connected to server");
     // Make a HTTP request
     client.println("GET /drowsy_detection_result HTTP/1.1");
-    client.println("Host: 192.168.0.39");
+    client.println("Host: 3.25.179.109");
     client.println("Connection: close");
     client.println();
   }
