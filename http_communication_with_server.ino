@@ -19,8 +19,8 @@ char ssid[] = "LABLAB1";            // your network SSID (name)
 char pass[] = "qazwsxedc123";        // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
-char server[] = "3.25.179.109";
-int port = 5000;
+char server[] = "http://capstone0098.online";
+int port = 8080;
 
 // Initialize the Ethernet client object
 WiFiEspClient client;
@@ -60,11 +60,10 @@ void setup()
   Serial.println();
   Serial.println("Starting connection to server...");
   // if you get a connection, report back via serial
-  if (client.connect(server, 5000)) {
+  if (client.connect(server, port)) {
     Serial.println("Connected to server");
     // Make a HTTP request
-    client.println("GET /drowsy_detection_result HTTP/1.1");
-    client.println("Host: 3.25.179.109");
+    client.println("GET /score HTTP/1.1");
     client.println("Connection: close");
     client.println();
   }
