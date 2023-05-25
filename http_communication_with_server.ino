@@ -74,7 +74,7 @@ void loop()
   // if there are incoming bytes available
   // from the server, read them and print them
   while (client.available()) {
-    char c = client.read();
+    char c = client.readString();
     Serial.write(c);
 
     // drowsy detection result = 1이면 진동 모터 작동, 0이면 중지.
