@@ -63,7 +63,7 @@ void setup()
   if (client.connect(server, port)) {
     Serial.println("Connected to server");
     // Make a HTTP request
-    client.println("GET /score HTTP/1.1");
+    client.println("GET /score/arduino HTTP/1.1");
     client.println("Connection: close");
     client.println();
   }
